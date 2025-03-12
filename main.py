@@ -1,11 +1,15 @@
-from pytube import YouTube
+import yt_dlp
 
 def download_video(url):
+    ydl_opts = {
+        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]',
+        'outtmpl': '%(title)s.mp4',
+        'merge_output_format': 'mp4'
+    }
+
     try:
-        yt = YouTube(url)
-        stream = yt.streams.get_highest_resolution()
-        print(f"Pobieranie: {yt.title}...")
-        stream.download()
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
         print("Pobieranie zakończone!")
     except Exception as e:
         print(f"Wystąpił błąd: {e}")
