@@ -5,7 +5,7 @@ Prosty skrypt do pobierania filmów z YouTube przy użyciu `yt-dlp`.
 ## 📥 Instalacja
 1. Pobierz repozytorium:
    ```sh
-   git clone https://github.com/twoj-repo/YouTube_downloader.git
+   git clone https://github.com/SculptTechProject/youtube_downloader.git
    cd YouTube_downloader
    ```
 2. Utwórz wirtualne środowisko i zainstaluj zależności:
